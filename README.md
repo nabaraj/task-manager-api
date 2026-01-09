@@ -15,4 +15,4 @@ Simple Node.js and Express REST API.
 
 ```bash
 npm install
-npm run dev
+npm start
