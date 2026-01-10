@@ -10,12 +10,19 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+    const { title } = req.body;
+
+    if (!title) {
+        return res.status(400).json({ message: "Title is required" });
+    }
+
     const task = {
         id: Date.now(),
-        title: req.body.title
-    }
+        title
+    };
+
     tasks.push(task);
-    res.status(201).json(tasks)
-})
+    res.status(201).json(task);
+});
 
 module.exports = router;
